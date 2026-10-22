@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  EDM record for the 3D model in this repository.
+  Structure follows Europeana's "Providing 3D content in EDM (guidelines)":
+  https://europeana.atlassian.net/wiki/spaces/EF/pages/3255468048/Providing+3D+content+in+EDM+guidelines
+
+  Note: this record is a learning exercise. For actual ingestion into Europeana, edm:isShownBy must point
+  to an oEmbed-compliant 3D viewer, and the controlled vocabularies (edm:intendedUsage, dc:type)
+  must use the exact values listed in the Europeana guidelines.
+  Fields in [ ] are to be completed.
+-->
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:edm="http://www.europeana.eu/schemas/edm/"
+    xmlns:ore="http://www.openarchives.org/ore/terms/"
+    xmlns:schema="http://schema.org/">
+
+  <!-- The physical object (Cultural Heritage Object) -->
+  <edm:ProvidedCHO rdf:about="#cho">
+    <dc:title xml:lang="pt">Cântara</dc:title>
+    <dc:title xml:lang="en">Cântara (water vessel)</dc:title>
+    <dc:description xml:lang="en">Vessel for carrying and keeping drinking water, used in daily life at home and in the fields in rural Trás-os-Montes.</dc:description>
+    <dc:identifier>MECC.0193</dc:identifier>
+    <dc:type xml:lang="pt">Cântara</dc:type>
+    <dc:type xml:lang="en">Water vessel</dc:type>
+    <dc:type rdf:resource="http://vocab.getty.edu/aat/300432654"/>
+    <dc:subject xml:lang="en">Domestic life; water</dc:subject>
+    <dc:subject xml:lang="en">Traditional craftsmanship: Portuguese pottery (UNESCO 2003 Convention domain)</dc:subject>
+    <dc:subject rdf:resource="http://www.wikidata.org/entity/Q11642"/>
+    <dc:subject rdf:resource="http://www.wikidata.org/entity/Q113144300"/>
+    <dc:subject xml:lang="en">Intangible cultural heritage: going to the fountain; fountain songs; sociability</dc:subject>
+    <dcterms:medium xml:lang="pt">Barro</dcterms:medium>
+    <dcterms:medium xml:lang="en">Clay</dcterms:medium>
+    <dcterms:medium rdf:resource="http://vocab.getty.edu/aat/300010439"/>
+    <dcterms:extent>Height 27 cm; width 24 cm; depth 20.5 cm</dcterms:extent>
+    <dcterms:isReferencedBy xml:lang="en">Interview with Ema Vila-Chã, Vale de Pena, 8 June 2026 (MUVIP project) – testimony about a similar cântaro</dcterms:isReferencedBy>
+    <dcterms:spatial xml:lang="pt">Vimioso, Portugal</dcterms:spatial>
+    <dcterms:spatial rdf:resource="https://sws.geonames.org/2732289/"/>
+    <edm:currentLocation rdf:resource="https://sws.geonames.org/2732289/"/>
+    <edm:type>3D</edm:type>
+  </edm:ProvidedCHO>
+
+  <!-- Viewer: Sketchfab embed (oEmbed-compliant), used in edm:isShownBy -->
+  <edm:WebResource rdf:about="https://sketchfab.com/models/[SKETCHFAB_UID]/embed">
+    <edm:type>3D</edm:type>
+    <dcterms:isFormatOf rdf:resource="https://cordpatricia.github.io/vimioso-3d/model.glb"/>
+    <edm:rights rdf:resource="[Rights statement URI, e.g. http://creativecommons.org/licenses/by-nc/4.0/]"/>
+  </edm:WebResource>
+
+  <!-- The 3D model itself -->
+  <edm:WebResource rdf:about="https://cordpatricia.github.io/vimioso-3d/model.glb">
+    <edm:type>3D</edm:type>
+    <dc:format>model/gltf-binary</dc:format>
+    <dc:type>[3DMesh – exact value from the Europeana guidelines]</dc:type>
+    <schema:digitalSourceType rdf:resource="http://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture"/>
+    <edm:polygonCount>[number]</edm:polygonCount>
+    <edm:vertexCount>[number]</edm:vertexCount>
+    <edm:intendedUsage rdf:resource="[value from the Europeana controlled vocabulary]"/>
+    <!-- Paradata: link to the record of how the model was made -->
+    <rdfs:seeAlso rdf:resource="https://github.com/cordpatricia/vimioso-3d/blob/main/PARADATA.md"/>
+    <edm:rights rdf:resource="[Rights statement URI]"/>
+  </edm:WebResource>
+
+  <!-- Thumbnail -->
+  <edm:WebResource rdf:about="https://cordpatricia.github.io/vimioso-3d/thumbnail.jpg">
+    <edm:rights rdf:resource="[Rights statement URI]"/>
+  </edm:WebResource>
+
+  <!-- Aggregation: links the object to its digital representations -->
+  <ore:Aggregation rdf:about="#aggregation">
+    <edm:aggregatedCHO rdf:resource="#cho"/>
+    <edm:dataProvider>Município de Vimioso – Casa da Cultura</edm:dataProvider>
+    <edm:provider>[Aggregator, if the record is sent to Europeana through one]</edm:provider>
+    <edm:isShownBy rdf:resource="https://sketchfab.com/models/[SKETCHFAB_UID]/embed"/>
+    <edm:isShownAt rdf:resource="https://cordpatricia.github.io/vimioso-3d/"/>
+    <edm:object rdf:resource="https://cordpatricia.github.io/vimioso-3d/thumbnail.jpg"/>
+    <edm:rights rdf:resource="[Rights statement URI]"/>
+  </ore:Aggregation>
+
+</rdf:RDF>
