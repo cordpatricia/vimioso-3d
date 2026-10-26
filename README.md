@@ -1,11 +1,24 @@
-# Cântara (MECC.0193) – 3D documentation
+# Patrícia Cordeiro – Digital heritage portfolio
 
-**Live viewer:** https://cordpatricia.github.io/vimioso-3d/
+**Portfolio page:** https://cordpatricia.github.io/vimioso-3d/
+**3D model (Sketchfab):** https://sketchfab.com/3d-models/4ea5c879151446e2ba9f68a1c4b4c1b9
 
-A small end-to-end 3D digital heritage exercise: a cântara (water vessel) from the ethnographic
-collection of the Casa da Cultura de Vimioso (Portugal), captured, processed and published by me
-online (Sketchfab viewer), and linked to community memory recorded in interviews for the museum.
-Work in progress: cleaning in Blender and an annotated scene in Smithsonian Voyager.
+This repository holds my digital heritage portfolio: selected projects with my role in each,
+and a hands-on 3D documentation of a cântara (water vessel), MECC.0193, from the ethnographic
+collection of the Casa da Cultura de Vimioso (Portugal). The object is linked to community memory
+recorded in interviews for the museum.
+
+## The cântara: what I did
+
+- **Capture:** three photogrammetric captures with an iPad (KIRI Engine). The first was a trial;
+  the second included a ruler in the scene to give the scale; the third, with the object turned over
+  and automatic masking, recorded the base without background and is the published model.
+- **Scale:** checked against the ruler in the scene (30 cm between marks = 0.3064 m in the model,
+  corrected by a uniform factor of 0.979). Resulting height: 27.3 cm (inventory: 27 cm).
+- **Processing:** orientation, scale and checks in Blender 5.1; export to glTF Binary (250,000 faces, 4K texture).
+- **Publication:** Sketchfab viewer, embedded in the object page.
+- **Documentation:** paradata (`PARADATA.md`) and an EDM record for Europeana (`edm-record.xml`).
+- **In progress:** an annotated scene in Smithsonian Voyager Story.
 
 ## What this repository contains
 
@@ -13,26 +26,25 @@ Work in progress: cleaning in Blender and an annotated scene in Smithsonian Voya
 |---|---|
 | `index.html` | Portfolio home: selected digital heritage projects and my role in each |
 | `cantara.html` | Object page: the 3D model (Sketchfab embed) and its context |
-| `images/` | Project images (own photos, or used with permission) |
-| `model.glb` | 3D model (photogrammetry, iPad, KIRI Engine) |
-| `scene.svx.json` | Voyager scene: annotations, article and tour (in progress) |
 | `PARADATA.md` | Record of how the model was made and the decisions taken |
 | `edm-record.xml` | Metadata in the Europeana Data Model (EDM), following Europeana's guidelines for 3D content |
 | `Cantara_MECC0193_Europeana_Academy.xlsx` | Europeana Academy mapping template, with semantic enrichment (Wikidata, Getty AAT, GeoNames) |
+| `images/` | Project images (own photos, or used with permission) – to add |
 
 ## Standards
 
 The metadata follows the [Europeana Data Model](https://europeana.atlassian.net/wiki/spaces/EF/pages/3255468048/Providing+3D+content+in+EDM+guidelines),
 the standard required for the Casa da Cultura de Vimioso project: the object (`edm:ProvidedCHO`),
-its 3D representations (`edm:WebResource`, `edm:type` = 3D) and the aggregation that links them
-(`ore:Aggregation`), with the paradata record linked from the model through `rdfs:seeAlso`.
+its 3D representations (`edm:WebResource`, `edm:type` = 3D), with the Sketchfab embed as
+`edm:isShownBy`, and the aggregation that links them (`ore:Aggregation`). The paradata record is
+linked from the model through `rdfs:seeAlso`.
 
 ## My role
 
-I carried out every step myself: planning, photographic capture, reconstruction,
-scaling, metadata, paradata and publication on GitHub Pages.
-This was a personal learning exercise, separate from the professional 3D digitisation
-of the Casa da Cultura collection.
+I carried out every step of the cântara documentation myself: planning, photographic capture,
+reconstruction, scaling and checks in Blender, publication, metadata and paradata.
+This is a personal learning exercise, separate from the professional 3D digitisation
+of the Casa da Cultura collection. For the other projects in the portfolio, each card states my role.
 
 ## Credits and permissions
 
