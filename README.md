@@ -1,12 +1,14 @@
-# Patrícia Cordeiro – Digital heritage portfolio
+# Cântara (MECC.0193) – 3D documentation
 
-**Portfolio page:** https://cordpatricia.github.io/vimioso-3d/
+**Object page with the 3D viewer:** https://cordpatricia.github.io/vimioso-3d/cantara.html
 **3D model (Sketchfab):** https://sketchfab.com/3d-models/4ea5c879151446e2ba9f68a1c4b4c1b9
 
-This repository holds my digital heritage portfolio: selected projects with my role in each,
-and a hands-on 3D documentation of a cântara (water vessel), MECC.0193, from the ethnographic
-collection of the Casa da Cultura de Vimioso (Portugal). The object is linked to community memory
-recorded in interviews for the museum.
+A hands-on 3D documentation of a cântara (water vessel), MECC.0193, from the ethnographic
+collection of the Casa da Cultura de Vimioso (Portugal), linked to community memory recorded
+in interviews for the museum.
+
+My other digital heritage projects, with my role in each, are in [PORTFOLIO.md](PORTFOLIO.md)
+and on the [portfolio page](https://cordpatricia.github.io/vimioso-3d/).
 
 ## The cântara: what I did
 
@@ -24,7 +26,8 @@ recorded in interviews for the museum.
 
 | File | Content |
 |---|---|
-| `index.html` | Portfolio home: selected digital heritage projects and my role in each |
+| `PORTFOLIO.md` | My other digital heritage projects and my role in each |
+| `index.html` | Portfolio page (web version of PORTFOLIO.md, with the cântara first) |
 | `cantara.html` | Object page: the 3D model (Sketchfab embed) and its context |
 | `PARADATA.md` | Record of how the model was made and the decisions taken |
 | `edm-record.xml` | Metadata in the Europeana Data Model (EDM), following Europeana's guidelines for 3D content |
@@ -44,7 +47,7 @@ linked from the model through `rdfs:seeAlso`.
 I carried out every step of the cântara documentation myself: planning, photographic capture,
 reconstruction, scaling and checks in Blender, publication, metadata and paradata.
 This is a personal learning exercise, separate from the professional 3D digitisation
-of the Casa da Cultura collection. For the other projects in the portfolio, each card states my role.
+of the Casa da Cultura collection.
 
 ## Credits and permissions
 
