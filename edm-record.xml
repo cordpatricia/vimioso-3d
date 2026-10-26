@@ -22,7 +22,9 @@
   <edm:ProvidedCHO rdf:about="#cho">
     <dc:title xml:lang="pt">Cântara</dc:title>
     <dc:title xml:lang="en">Cântara (water vessel)</dc:title>
-    <dc:description xml:lang="en">Vessel for carrying and keeping drinking water, used in daily life at home and in the fields in rural Trás-os-Montes.</dc:description>
+    <dc:description xml:lang="en">Vessel for carrying and keeping drinking water, used in daily life at home and in the fields in rural Trás-os-Montes. Unglazed clay, rounded body, narrow neck and one handle, with a band of short incised strokes around the shoulder.</dc:description>
+    <!-- Possible provenance: hypothesis only, so it is stated as a note and not as dc:creator or as a place of production. -->
+    <dc:description xml:lang="en">Its decoration, surface texture and shape suggest that it may have been made by the women potters (louceiras) of Pinela (Bragança); attribution not confirmed.</dc:description>
     <dc:identifier>MECC.0193</dc:identifier>
     <dc:type xml:lang="pt">Cântara</dc:type>
     <dc:type xml:lang="en">Water vessel</dc:type>
@@ -44,7 +46,7 @@
   </edm:ProvidedCHO>
 
   <!-- Viewer: Sketchfab embed (oEmbed-compliant), used in edm:isShownBy -->
-  <edm:WebResource rdf:about="https://sketchfab.com/models/[SKETCHFAB_UID]/embed">
+  <edm:WebResource rdf:about="https://sketchfab.com/models/4ea5c879151446e2ba9f68a1c4b4c1b9/embed">
     <edm:type>3D</edm:type>
     <dcterms:isFormatOf rdf:resource="https://cordpatricia.github.io/vimioso-3d/model.glb"/>
     <edm:rights rdf:resource="[Rights statement URI, e.g. http://creativecommons.org/licenses/by-nc/4.0/]"/>
@@ -74,7 +76,7 @@
     <edm:aggregatedCHO rdf:resource="#cho"/>
     <edm:dataProvider>Município de Vimioso – Casa da Cultura</edm:dataProvider>
     <edm:provider>[Aggregator, if the record is sent to Europeana through one]</edm:provider>
-    <edm:isShownBy rdf:resource="https://sketchfab.com/models/[SKETCHFAB_UID]/embed"/>
+    <edm:isShownBy rdf:resource="https://sketchfab.com/models/4ea5c879151446e2ba9f68a1c4b4c1b9/embed"/>
     <edm:isShownAt rdf:resource="https://cordpatricia.github.io/vimioso-3d/"/>
     <edm:object rdf:resource="https://cordpatricia.github.io/vimioso-3d/thumbnail.jpg"/>
     <edm:rights rdf:resource="[Rights statement URI]"/>

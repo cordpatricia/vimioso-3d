@@ -3,98 +3,135 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cântara – 3D documentation | Patrícia Cordeiro</title>
+  <title>Portfolio | Patrícia Cordeiro</title>
   <style>
-    :root { --text: #1f2328; --muted: #57606a; --bg: #ffffff; --line: #d0d7de; --quote: #f6f8fa; }
+    :root { --text: #1f2328; --muted: #57606a; --bg: #ffffff; --line: #d0d7de; --card: #f6f8fa; --accent: #8a4b22; }
     @media (prefers-color-scheme: dark) {
-      :root { --text: #e6edf3; --muted: #9da7b3; --bg: #0d1117; --line: #30363d; --quote: #161b22; }
+      :root { --text: #e6edf3; --muted: #9da7b3; --bg: #0d1117; --line: #30363d; --card: #161b22; --accent: #e0a070; }
     }
     * { box-sizing: border-box; }
     body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
            color: var(--text); background: var(--bg); line-height: 1.5; }
-    main { max-width: 960px; margin: 0 auto; padding: 24px 16px 48px; }
-    h1 { font-size: 1.6rem; margin: 0 0 4px; }
-    .meta { color: var(--muted); margin: 0 0 20px; }
-    .viewer { width: 100%; height: 70vh; min-height: 360px;
-              border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-    .viewer iframe { width: 100%; height: 100%; border: 0; display: block; }
-    .viewer.placeholder { height: auto; min-height: 0; padding: 48px 16px; text-align: center;
-                          color: var(--muted); background: var(--quote); }
-    section { margin-top: 28px; }
-    h2 { font-size: 1.15rem; margin: 0 0 8px; }
-    blockquote { margin: 0; padding: 12px 16px; background: var(--quote);
-                 border-left: 4px solid var(--line); border-radius: 4px; }
+    main { max-width: 1000px; margin: 0 auto; padding: 32px 16px 48px; }
+    h1 { font-size: 1.7rem; margin: 0 0 4px; }
+    .lead { color: var(--muted); margin: 0 0 28px; max-width: 760px; }
+    h2 { font-size: 1.15rem; margin: 32px 0 12px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+            display: flex; flex-direction: column; }
+    .card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; background: var(--line); }
+    .card .body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+    .card h3 { font-size: 1rem; margin: 0; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin: 0; }
+    .role { font-size: 0.85rem; margin: 0; }
+    .role strong { color: var(--accent); }
+    .card p { margin: 0; font-size: 0.92rem; }
+    .links { margin-top: auto; padding-top: 8px; font-size: 0.9rem; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+    .featured { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(240px, 1fr) 1.4fr; }
+    .featured img { height: 100%; aspect-ratio: auto; min-height: 220px; }
+    .featured:not(:has(img)) { grid-template-columns: 1fr; }
+    @media (max-width: 640px) { .featured { grid-template-columns: 1fr; } .featured img { min-height: 0; aspect-ratio: 4 / 3; } }
     a { color: inherit; }
-    footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line);
-             color: var(--muted); font-size: 0.9rem; }
+    footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
   </style>
 </head>
 <body>
 <main>
-  <h1>Cântara – water vessel</h1>
-  <p class="meta">Museu Etnográfico da Casa da Cultura de Vimioso (Portugal) · MECC.0193 · 3D documentation by Patrícia Cordeiro · October 2026</p>
+  <h1>Patrícia Cordeiro – Digital heritage portfolio</h1>
+  <p class="lead">Selected projects in the digital documentation and mediation of cultural heritage, with a focus on
+     intangible heritage, 3D and community participation. Each card states my role: what I coordinated and what I did myself.</p>
 
-  <!--
-    Current viewer: Sketchfab embed (oEmbed-compliant, as required by Europeana for edm:isShownBy).
-    Next version: annotated Smithsonian Voyager scene (scene.svx.json + model.glb in this folder):
-    <voyager-explorer root="./" document="scene.svx.json"></voyager-explorer>
-  -->
-  <!-- When the model is on Sketchfab, replace the placeholder below with:
-  <div class="viewer">
-    <iframe title="Cântara MECC.0193 – 3D model"
-            src="https://sketchfab.com/models/SKETCHFAB_UID/embed"
-            allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe>
+  <h2>Hands-on 3D work</h2>
+  <div class="grid">
+    <article class="card featured">
+      <img src="images/cantara.jpg" alt="3D model of a clay cântara (water vessel)" onerror="this.remove()">
+      <div class="body">
+        <h3>Cântara (water vessel), MECC.0193 – 3D documentation</h3>
+        <p class="meta">Casa da Cultura de Vimioso · October 2026 · in progress</p>
+        <p class="role"><strong>My role:</strong> capture, processing, metadata and publication, done by me</p>
+        <p>Photogrammetric capture of a clay vessel (iPad, three captures), scale from a ruler in the scene,
+           orientation and checks in Blender, publication on Sketchfab, paradata and an EDM record for Europeana,
+           linked to community memory recorded in interviews.</p>
+        <div class="links"><a href="cantara.html">Object page</a><a href="https://github.com/cordpatricia/vimioso-3d/blob/main/PARADATA.md">Paradata</a><a href="https://github.com/cordpatricia/vimioso-3d/blob/main/edm-record.xml">EDM record</a></div>
+      </div>
+    </article>
   </div>
-  -->
-  <div class="viewer placeholder">
-    <p>3D viewer coming soon – the model is being cleaned and prepared for publication.</p>
+
+  <h2>Digital heritage projects</h2>
+  <div class="grid">
+    <article class="card">
+      <img src="images/vimioso.jpg" alt="Casa da Cultura de Vimioso" onerror="this.remove()">
+      <div class="body">
+        <h3>Casa da Cultura de Vimioso – Between Memories and Pixels</h3>
+        <p class="meta">Municipality of Vimioso · NORTE 2030 · 2025–2027</p>
+        <p class="role"><strong>My role:</strong> coordinator (MORE CoLAB)</p>
+        <p>Digitisation of an ethnographic collection, its integration into Europeana, and research and digital
+           documentation of the intangible heritage associated with the objects.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="images/escarparte.jpg" alt="EscarpArte – rock art of the Serra de Passos" onerror="this.remove()">
+      <div class="body">
+        <h3>EscarpArte – rock art of the Passos/Santa Comba mountains</h3>
+        <p class="meta">“la Caixa” Foundation and FCT · 2021–2027</p>
+        <p class="role"><strong>My role:</strong> project manager; author of the app's content and narrative</p>
+        <p>3D and multispectral survey of painted rock shelters, 3D capture of objects and a pilot AR mobile app.
+           I wrote the content and narrative, combining scientific texts with community testimonies and local history.</p>
+        <div class="links"><a href="https://escarparte.pt/">Project website</a><a href="https://morecolab.pt/en/project-escaparte/">MORE CoLAB</a></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="images/pauliteiros.jpg" alt="Pauliteiros folk dance" onerror="this.remove()">
+      <div class="body">
+        <h3>Dancing into the Digital Age – Pauliteiros folk dances</h3>
+        <p class="meta">MORE CoLAB and ESACT-IPB · 2023</p>
+        <p class="role"><strong>My role:</strong> researcher, co-author and community mediator</p>
+        <p>Experimental model for the digitisation of traditional folk dances. I mediated the group's participation:
+           selection of the choreography, annotation and documentation of the costumes.</p>
+        <div class="links"><a href="https://doi.org/10.23919/CISTI58278.2023.10211933">Paper (CISTI 2023)</a><a href="https://bibliotecadigital.ipb.pt/entities/publication/86d08783-84aa-4f3c-910b-900b3086d096">Open repository</a></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="images/lazarim.jpg" alt="Masks of the Lazarim Carnival" onerror="this.remove()">
+      <div class="body">
+        <h3>Masked Rituals of the Lazarim Carnival</h3>
+        <p class="meta">Municipality of Lamego · 2021–2024</p>
+        <p class="role"><strong>My role:</strong> coordinator (MORE CoLAB)</p>
+        <p>Digital inventory of intangible heritage, 3D capture of masks and audio and video recordings for a multimedia
+           catalogue of the Iberian Mask Interpretation Centre.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="images/podence.jpg" alt="Caretos of Podence" onerror="this.remove()">
+      <div class="body">
+        <h3>Carnival of Podence – UNESCO nomination and digital archive</h3>
+        <p class="meta">2017–2019</p>
+        <p class="role"><strong>My role:</strong> nomination coordinator; designer of the digital components</p>
+        <p>Coordination of the nomination inscribed on the UNESCO Representative List in 2019, and design of an associated
+           heritage archive, a digital game and an audio guide (“Chocalhar Podence”).</p>
+        <div class="links"><a href="https://ich.unesco.org/en/RL/winter-festivities-carnival-of-podence-01463">UNESCO listing</a></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="images/oficinas.jpg" alt="Cultural Tourism Workshops in Macedo de Cavaleiros" onerror="this.remove()">
+      <div class="body">
+        <h3>Cultural Tourism Workshops – Macedo de Cavaleiros</h3>
+        <p class="meta">Municipality of Macedo de Cavaleiros · 2025 · follow-up of TExTOUR (Horizon 2020)</p>
+        <p class="role"><strong>My role:</strong> project coordinator</p>
+        <p>9 co-design sessions with 78 residents in 8 villages, a local heritage database, a co-created visual identity
+           and a pilot test with 15 participants.</p>
+      </div>
+    </article>
   </div>
-
-  <section>
-    <h2>About the object</h2>
-    <p>This cântara, from the ethnographic collection of the Casa da Cultura de Vimioso, is made of
-       clay and measures 27 × 24 × 20.5 cm. [Any marks or signs of use – to confirm.]</p>
-  </section>
-
-  <section>
-    <h2>Intangible heritage</h2>
-    <p><strong>Pottery know-how.</strong> As a clay vessel, the cântara is first of all the product of
-       the know-how of Portuguese pottery. In the terms of the UNESCO 2003 Convention, it belongs to the
-       domain of <em>traditional craftsmanship</em>.</p>
-    <p><strong>Uses.</strong> The cântara was used to carry and keep drinking water, at home and in the
-       fields, where it is part of the memory of the harvest.</p>
-    <p><strong>Associated practices.</strong> The museum's intangible cultural heritage (ICH) inventory
-       singles out cântaros as special objects: going to the fountain was an everyday practice
-       associated with women, linked to fountain songs and to social life in the village.</p>
-  </section>
-
-  <section>
-    <h2>Community voice</h2>
-    <p>In an interview recorded for the museum on 8 June 2026, basket maker Ema Vila-Chã (79, Vale de Pena)
-       remembered her own clay cântaro, more than 80 years old. During the harvest it rolled down a
-       slope from the shade of a cork oak, and reached the path without a single crack. She also
-       explained that woven rings (<em>rodelas</em>) were made to rest the cântaro and the large cooking pots on.</p>
-    <!-- Optional: a short quote, only if the interview consent allows public use with her name. -->
-    <!-- <blockquote>“[short quote in Portuguese]” – Ema Vila-Chã, 2026</blockquote> -->
-    <p>Her story is about a cântaro of her own, not this object; it shows the everyday uses and
-       memories that objects like this one carry.</p>
-  </section>
-
-  <section>
-    <h2>What I did</h2>
-    <p>I captured, processed and published this model myself: photographic capture of 150 images with an iPad
-       (KIRI Engine), photogrammetric reconstruction with automatic background masking, and rescaling to the
-       inventory height of 27 cm. The base was not captured, because the object rested on the table; this is
-       recorded as a limitation. Next step, in progress: cleaning in Blender and an annotated scene in
-       Smithsonian Voyager Story. The process is documented in the
-       <a href="https://github.com/cordpatricia/vimioso-3d/blob/main/PARADATA.md">paradata record</a>,
-       and the metadata follows the <a href="https://github.com/cordpatricia/vimioso-3d/blob/main/edm-record.xml">Europeana Data Model</a>.</p>
-  </section>
 
   <footer>
-    Viewer: Sketchfab ·
-    Object published with the permission of the Município de Vimioso ·
-    Contact: <a href="https://orcid.org/0000-0003-4086-392X">ORCID 0000-0003-4086-392X</a>
+    Patrícia Cordeiro · <a href="https://orcid.org/0000-0003-4086-392X">ORCID 0000-0003-4086-392X</a> ·
+    <a href="https://www.linkedin.com/in/patriciacor">LinkedIn</a>
   </footer>
 </main>
 </body>

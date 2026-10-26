@@ -9,32 +9,44 @@ Record of how this 3D model was produced, so that others can understand, assess 
 | Name | Cântara (water vessel) |
 | Inventory number | MECC.0193 (original no. 192) |
 | Collection / holder | Museu Etnográfico da Casa da Cultura de Vimioso, Município de Vimioso |
-| Material and surface | Clay; surface: [matte / glazed, marks of use] |
+| Material and surface | Clay, unglazed, matte surface [marks of use – to confirm] |
+| Form and decoration | Rounded body, narrow neck, one handle from rim to shoulder; band of short incised strokes around the shoulder [to confirm with the museologist] |
+| Possible provenance | Pinela (Bragança), women potters (*louceiras*) – hypothesis based on decoration, surface texture and shape; not a confirmed attribution |
 | Dimensions (inventory) | Height 27 cm × width 24 cm × depth 20.5 cm |
 | Condition (inventory, 20/10/2026) | Regular |
 | Location at capture | MORE CoLAB – temporary loan ACT-MUVIP-2026-001 |
 
 ## 2. Capture
 
-| Field | Value |
-|---|---|
-| Date and place | 21 October 2026, about 18:30 – MORE CoLAB [room to confirm] |
-| Device | iPad [model], with LiDAR |
-| App and capture mode | KIRI Engine (free version) – Scans mode (photogrammetry) |
-| Number of photos | 150 (app maximum per scan) [minus any deleted in review] |
-| Capture pattern | [e.g. 3 rings at low, middle and high height, plus top and the opening] |
-| Lighting | [natural / artificial, diffuse or direct] |
-| Background and support | [ ] |
-| Scale reference | Inventory dimensions (27 × 24 × 20.5 cm) [and/or ruler in the scene] |
+Three captures were made. Capture 1 was a trial; its limitations (no scale reference, base not captured,
+artificial light) led to captures 2 and 3. Capture 2 included a ruler in the scene and gave the scale;
+capture 3, with the object turned over and automatic masking, recorded the base without background
+and is the one published.
+
+| Field | Capture 1 (trial) | Capture 2 (scale reference) | Capture 3 (published) |
+|---|---|---|---|
+| Date | 21 October 2026, about 18:30 | 23 October 2026, morning | 23 October 2026 |
+| Place | MORE CoLAB | MORE CoLAB | MORE CoLAB |
+| Device | iPad [model], with LiDAR | iPad [model] | iPad [model] |
+| App and mode | KIRI Engine (free) – Photo Scan | KIRI Engine (free) – Photo Scan | KIRI Engine (free) – Photo Scan |
+| Number of photos | 150 | [ ] | [ ; of which with the object turned over: ] |
+| Capture pattern | 3 rings, object upright | Rings, object upright and turned over | Rings with the object upright, then turned over (mouth down) to capture the base |
+| Lighting | Artificial | Natural, diffuse | Natural, diffuse |
+| Scale reference | None | Folding ruler in the scene | None in the model (masked); scale transferred from capture 2 |
+| Auto Object Masking | On | Off (background, ruler and support reconstructed) | On |
+| Export | GLB | GLB | OBJ (format chosen before upload; GLB exported from Blender) |
 
 ## 3. Processing
 
 | Step | Tool | What I did and why |
 |---|---|---|
-| Reconstruction | KIRI Engine (cloud) | Polygon count: High; texture: 4K; Auto Object Masking on; Train AI off; visibility private |
-| Cleaning | [ ] | [removed background, support, noise] |
-| Scaling and orientation | [ ] | [how scale was set] |
-| Export | KIRI Engine | glb, [number of polygons], [texture resolution], [file size] |
+| Reconstruction | KIRI Engine (cloud) | Polygon count: High; texture: 4K; Train AI off; visibility private |
+| Scale (capture 2) | Blender 5.1 | Ruler captured in the scene: 30 cm between marks measured 0.3064 m; uniform correction factor 0.979. Resulting height of the object: 27.3 cm (inventory: 27 cm) |
+| Scale (capture 3) | Blender 5.1 | Uniform scale factor 0.298, to match the ruler-based height of capture 2 (27.3 cm) |
+| Orientation | Blender 5.1 | Model rotated upright (OBJ import) [and levelled]; rotation and scale applied to the mesh |
+| Cleaning | Blender 5.1 | Capture 3 needed almost no cleaning thanks to masking [describe any] |
+| Repair | – | Base recorded in capture 3, so no reconstructed surface [confirm] |
+| Export | Blender 5.1 | model.glb (glTF Binary), 250,000 faces, 4K texture, [file size] |
 
 ## 4. Publication
 
@@ -64,11 +76,12 @@ The ICH framing follows this order:
 
 ## 6. Limitations and decisions
 
-- The base was not captured: the object rested on the table during capture, so the model has an opening at the bottom. [Left open / closed with a flat surface in Blender – this is a reconstruction, not recorded surface.]
-- Photogrammetry without a scale reference produced an arbitrary scale (height measured in KIRI: 606 mm; 0.648 m in Blender). The model was rescaled uniformly in Blender (factor 0.417) to the inventory height of 270 mm. Resulting dimensions: 27.0 × 20.9 × 20.8 cm. The width and depth differ from the inventory values (24 × 20.5 cm); a non-uniform scale was rejected because it would distort the geometry. [Check with a new manual measurement of the object.]
-- Loose fragments left by the automatic masking were removed in Blender.
-- [e.g. colour may differ from the original because of the lighting]
-- [what I would do differently in a professional campaign]
+- Capture 1 (trial) had no scale reference, so its scale was arbitrary, and the base was not captured. These problems were corrected in capture 2 by placing a ruler in the scene and turning the object over to photograph the base.
+- Scale is based on the ruler in the scene, not on the inventory dimensions (27 × 24 × 20.5 cm). [Compare the final model with a manual tape measurement of the object.]
+- Capture 2 (with the ruler) was also cleaned and its base hole closed with Grid Fill (3,146 faces, separate material "reconstruction_base"); it is kept as the scale reference, not published.
+- The colour differs between captures 2 and 3 (natural light changed); [state which is closer to the object].
+- The width measured on the model (about 21 cm, handle included) differs from the inventory value (24 cm). [To check with the museologist.]
+- [What I would do differently in a professional campaign: e.g. scale bars with targets, a turntable, colour checker.]
 
 ## 7. Rights
 

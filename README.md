@@ -11,7 +11,9 @@ Work in progress: cleaning in Blender and an annotated scene in Smithsonian Voya
 
 | File | Content |
 |---|---|
-| `index.html` | Web page that displays the model (Sketchfab embed) and its context |
+| `index.html` | Portfolio home: selected digital heritage projects and my role in each |
+| `cantara.html` | Object page: the 3D model (Sketchfab embed) and its context |
+| `images/` | Project images (own photos, or used with permission) |
 | `model.glb` | 3D model (photogrammetry, iPad, KIRI Engine) |
 | `scene.svx.json` | Voyager scene: annotations, article and tour (in progress) |
 | `PARADATA.md` | Record of how the model was made and the decisions taken |
