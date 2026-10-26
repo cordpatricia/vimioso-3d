@@ -20,6 +20,13 @@
     .viewer iframe { width: 100%; height: 100%; border: 0; display: block; }
     .viewer.placeholder { height: auto; min-height: 0; padding: 48px 16px; text-align: center;
                           color: var(--muted); background: var(--quote); }
+    .audio-box { margin-top: 16px; padding: 14px 16px; background: var(--quote);
+                 border: 1px solid var(--line); border-radius: 8px; transition: border-color .3s; }
+    .audio-box.playing { border-color: #b5651d; }
+    .audio-box audio { width: 100%; margin: 8px 0; }
+    .audio-box h3 { font-size: 1rem; margin: 0; }
+    .audio-box details { font-size: 0.92rem; }
+    .hint { color: var(--muted); font-size: 0.9rem; margin: 0; }
     section { margin-top: 28px; }
     h2 { font-size: 1.15rem; margin: 0 0 8px; }
     blockquote { margin: 0; padding: 12px 16px; background: var(--quote);
@@ -36,14 +43,12 @@
   <p class="meta">Museu Etnográfico da Casa da Cultura de Vimioso (Portugal) · MECC.0193 · 3D documentation by Patrícia Cordeiro · October 2026</p>
 
   <!--
-    Current viewer: Sketchfab embed (oEmbed-compliant, as required by Europeana for edm:isShownBy).
-    Next version: annotated Smithsonian Voyager scene (scene.svx.json + model.glb in this folder):
-    <voyager-explorer root="./" document="scene.svx.json"></voyager-explorer>
+    Viewer: Sketchfab embed driven by the Sketchfab Viewer API (oEmbed-compliant; used as edm:isShownBy).
+    Selecting the annotation "The cântaro that rolled down the slope" plays the community testimony below.
+    Next version: annotated Smithsonian Voyager scene.
   -->
-  <!-- Viewer: Sketchfab embed (oEmbed-compliant, used as edm:isShownBy). Next version: annotated Voyager scene. -->
   <div class="viewer">
-    <iframe title="Cântara MECC.0193 – 3D model"
-            src="https://sketchfab.com/models/4ea5c879151446e2ba9f68a1c4b4c1b9/embed"
+    <iframe id="api-frame" title="Cântara MECC.0193 – 3D model"
             allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe>
   </div>
   <p class="meta"><a href="https://sketchfab.com/3d-models/4ea5c879151446e2ba9f68a1c4b4c1b9">View on Sketchfab</a></p>
@@ -51,11 +56,13 @@
   <section>
     <h2>About the object</h2>
     <p>This cântara, from the ethnographic collection of the Casa da Cultura de Vimioso, is made of
-       unglazed clay and measures 27 × 24 × 20.5 cm (inventory). It has a rounded body, a narrow neck,
+       unglazed clay. On the 3D model, scaled with a ruler, it is 27.3 cm high and about 21 cm wide, handle included
+       (inventory: 27 × 24 × 20.5 cm; the width is being checked). It has a rounded body, a narrow neck,
        a single handle from the rim to the shoulder, and a band of short incised strokes around the shoulder.
        [Other marks or signs of use – to confirm.]</p>
     <p>Its decoration, surface texture and shape suggest that it may have been made by the women potters
-       (<em>louceiras</em>) of Pinela (Bragança). This is a hypothesis based on comparison with Pinela pottery,
+       (<em>louceiras</em>) of Pinela (Bragança; see the
+       <a href="https://www.rotaterrafria.com/pages/227/?geo_article_id=7713">Centro Interpretativo da Cerâmica de Pinela</a>). This is a hypothesis based on comparison with Pinela pottery,
        not a confirmed attribution; it is being reviewed in the museum's inventory work.</p>
   </section>
 
@@ -75,11 +82,27 @@
   <section>
     <h2>Community voice</h2>
     <p>In an interview recorded for the museum on 8 June 2026, basket maker Ema Vila-Chã (79, Vale de Pena)
-       remembered her own clay cântaro, more than 80 years old. During the harvest it rolled down a
-       slope from the shade of a cork oak, and reached the path without a single crack. She also
-       explained that woven rings (<em>rodelas</em>) were made to rest the cântaro and the large cooking pots on.</p>
-    <!-- Optional: a short quote, only if the interview consent allows public use with her name. -->
-    <!-- <blockquote>“[short quote in Portuguese]” – Ema Vila-Chã, 2026</blockquote> -->
+       remembered her own clay cântaro, more than 80 years old. She also explained that woven rings
+       (<em>rodelas</em>) were made to rest the cântaro and the large cooking pots on.</p>
+
+    <div class="audio-box" id="audio-box">
+      <h3>“The cântaro that rolled down the slope” – Ema Vila-Chã</h3>
+      <p class="hint">Select the annotation on the handle of the 3D model, or press play. In Portuguese, 52 s.</p>
+      <audio id="testimony" controls preload="none" src="audio/cantaro-rolou.mp3"></audio>
+      <details>
+        <summary>English translation</summary>
+        <p>“I have one that is more than 80 years old, a clay cântaro. Let me tell you its story. My sister and I
+           were harvesting. We were in the shade, and the cântaro was there too, in the shade of a cork oak.
+           My sister asked for water, and my parents told her: ‘The cântaro is there, drink.’ She touched it and
+           it began to roll down the slope, from stone to stone, until it reached the path. The women harvesting
+           on the other side shouted: ‘Go there, Madalena, there it is, it has reached the path.’ And the blessed
+           cântaro did not break. It doesn't have a single crack. And it is made of clay. I still have it.”</p>
+      </details>
+      <p class="hint">Excerpt from the interview of 8 June 2026 (MUVIP project; interviewers Matilde Gomes,
+         Patrícia Cordeiro and João Marques), 13:23–14:15, volume normalised. Published with the interviewee's
+         signed consent.</p>
+    </div>
+
     <p>Her story is about a cântaro of her own, not this object; it shows the everyday uses and
        memories that objects like this one carry.</p>
   </section>
@@ -88,8 +111,8 @@
     <h2>What I did</h2>
     <p>I captured, processed and published this model myself, in three photogrammetric captures with an iPad
        (KIRI Engine). A ruler placed in the scene gave the scale (height 27.3 cm), and turning the object over
-       recorded its base. I oriented, scaled and checked the model in Blender and published it on Sketchfab.
-       Next step, in progress: an annotated scene in Smithsonian Voyager Story. The process is documented in the
+       recorded its base. I oriented, scaled and checked the model in Blender and published it on Sketchfab, where I used the
+       Sketchfab Viewer API so that an annotation plays a community testimony. Next step, in progress: an annotated scene in Smithsonian Voyager Story. The process is documented in the
        <a href="https://github.com/cordpatricia/vimioso-3d/blob/main/PARADATA.md">paradata record</a>,
        and the metadata follows the <a href="https://github.com/cordpatricia/vimioso-3d/blob/main/edm-record.xml">Europeana Data Model</a>.</p>
   </section>
@@ -100,5 +123,50 @@
     Contact: <a href="https://orcid.org/0000-0003-4086-392X">ORCID 0000-0003-4086-392X</a>
   </footer>
 </main>
+<script src="https://static.sketchfab.com/api/sketchfab-viewer-1.12.1.js"></script>
+<script>
+  // Sketchfab Viewer API: play the testimony when its annotation is selected.
+  (function () {
+    var MODEL_UID = '4ea5c879151446e2ba9f68a1c4b4c1b9';
+    var AUDIO_ANNOTATION = /rolled|rolou/i;   // matched against the annotation title
+    var audio = document.getElementById('testimony');
+    var box = document.getElementById('audio-box');
+    var target = -1;
+
+    audio.addEventListener('play', function () { box.classList.add('playing'); });
+    audio.addEventListener('pause', function () { box.classList.remove('playing'); });
+    audio.addEventListener('ended', function () { box.classList.remove('playing'); });
+
+    var frame = document.getElementById('api-frame');
+    if (typeof Sketchfab === 'undefined') {
+      // Fallback if the Viewer API script cannot load: plain embed, audio still playable with its own button.
+      frame.src = 'https://sketchfab.com/models/' + MODEL_UID + '/embed';
+      return;
+    }
+    var client = new Sketchfab(frame);
+    client.init(MODEL_UID, {
+      ui_infos: 0, ui_watermark_link: 0,
+      success: function (api) {
+        api.start();
+        api.addEventListener('viewerready', function () {
+          api.getAnnotationList(function (err, annotations) {
+            if (err || !annotations) return;
+            annotations.forEach(function (a, i) { if (AUDIO_ANNOTATION.test(a.name || '')) target = i; });
+          });
+        });
+        api.addEventListener('annotationSelect', function (index) {
+          if (index === target && target !== -1) {
+            audio.currentTime = 0;
+            var p = audio.play();
+            if (p && p.catch) p.catch(function () { /* autoplay blocked: the user can press play */ });
+          } else if (!audio.paused) {
+            audio.pause();
+          }
+        });
+      },
+      error: function () { console.log('Sketchfab viewer could not be loaded'); }
+    });
+  })();
+</script>
 </body>
 </html>

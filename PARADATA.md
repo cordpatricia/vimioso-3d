@@ -85,4 +85,4 @@ The ICH framing follows this order:
 
 ## 7. Rights
 
-Object published with the permission of the Município de Vimioso. Testimony used under the consent signed by the interviewee [confirm that it covers online publication with her name]. Licence: [ ].
+Object published with the permission of the Município de Vimioso. Testimony used under the consent signed by the interviewee, which covers online publication (name and voice). The audio excerpt (interview of 8 June 2026, 13:23–14:15) was cut and its volume normalised; it was not otherwise edited. Licence: [ ].

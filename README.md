@@ -18,7 +18,8 @@ and on the [portfolio page](https://cordpatricia.github.io/vimioso-3d/).
 - **Scale:** checked against the ruler in the scene (30 cm between marks = 0.3064 m in the model,
   corrected by a uniform factor of 0.979). Resulting height: 27.3 cm (inventory: 27 cm).
 - **Processing:** orientation, scale and checks in Blender 5.1; export to glTF Binary (250,000 faces, 4K texture).
-- **Publication:** Sketchfab viewer, embedded in the object page.
+- **Publication:** Sketchfab viewer, embedded in the object page with the Sketchfab Viewer API: selecting
+  the annotation “The cântaro that rolled down the slope” plays an excerpt of a community interview.
 - **Documentation:** paradata (`PARADATA.md`) and an EDM record for Europeana (`edm-record.xml`).
 - **In progress:** an annotated scene in Smithsonian Voyager Story.
 
@@ -28,7 +29,8 @@ and on the [portfolio page](https://cordpatricia.github.io/vimioso-3d/).
 |---|---|
 | `PORTFOLIO.md` | My other digital heritage projects and my role in each |
 | `index.html` | Portfolio page (web version of PORTFOLIO.md, with the cântara first) |
-| `cantara.html` | Object page: the 3D model (Sketchfab embed) and its context |
+| `cantara.html` | Object page: the 3D model (Sketchfab Viewer API) and its context; selecting an annotation plays a community testimony |
+| `audio/cantaro-rolou.mp3` | Excerpt of the interview with Ema Vila-Chã (13:23–14:15), volume normalised |
 | `PARADATA.md` | Record of how the model was made and the decisions taken |
 | `edm-record.xml` | Metadata in the Europeana Data Model (EDM), following Europeana's guidelines for 3D content |
 | `Cantara_MECC0193_Europeana_Academy.xlsx` | Europeana Academy mapping template, with semantic enrichment (Wikidata, Getty AAT, GeoNames) |
